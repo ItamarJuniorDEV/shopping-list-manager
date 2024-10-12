@@ -1,0 +1,318 @@
+:root {
+  --color-bg-start: #eff6ff;
+  --color-bg-end: #dbeafe;
+  --color-primary: #3b82f6;
+  --color-secondary: #1d4ed8;
+  --color-accent: #60a5fa;
+  --color-text: #1e3a8a;
+  --color-text-light: #93c5fd;
+  --color-danger: #ef4444;
+  --gradient-blue: linear-gradient(135deg, #3b82f6, #1e40af);
+  --gradient-red: linear-gradient(135deg, #ef4444, #b91c1c);
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(135deg, var(--color-bg-start), var(--color-bg-end));
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.background-decoration {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+      radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 20%),
+      radial-gradient(circle at 90% 80%, rgba(29, 78, 216, 0.15) 0%, transparent 25%);
+  z-index: -1;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: var(--shadow-lg);
+  padding: 3rem;
+  width: 90%;
+  max-width: 800px;
+  min-height: 80vh;
+  animation: fadeInUp 0.8s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+h1 {
+  color: var(--color-text);
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.subtitle {
+  color: var(--color-text-light);
+  font-size: 1.2rem;
+}
+
+.input-container {
+  display: flex;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-md);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.input-container:focus-within {
+  box-shadow: var(--shadow-lg);
+}
+
+input[type="text"] {
+  flex-grow: 1;
+  padding: 1.2rem;
+  font-size: 1.1rem;
+  border: none;
+  background: white;
+  transition: var(--transition);
+}
+
+input[type="text"]:focus {
+  outline: none;
+  background: #f0f9ff;
+}
+
+button {
+  background: var(--gradient-blue);
+  color: white;
+  border: none;
+  padding: 1.2rem 1.8rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button:hover {
+  filter: brightness(110%);
+  transform: translateY(-2px);
+}
+
+button i {
+  margin-right: 0.5rem;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background: white;
+  margin-bottom: 1.5rem;
+  padding: 1.2rem;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+      opacity: 0;
+      transform: translateX(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+li:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+li button {
+  background: var(--gradient-red);
+  padding: 0.6rem;
+  font-size: 0.9rem;
+  border-radius: 5px;
+}
+
+.summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-text-light);
+}
+
+#item-count {
+  font-weight: bold;
+  color: var(--color-primary);
+  font-size: 1.2rem;
+}
+
+#clear-all {
+  background: var(--gradient-red);
+}
+
+.decoration-circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.1;
+  z-index: -1;
+}
+
+.circle-1 {
+  width: 300px;
+  height: 300px;
+  background: var(--color-primary);
+  top: -100px;
+  left: -100px;
+  animation: float 8s ease-in-out infinite;
+}
+
+.circle-2 {
+  width: 200px;
+  height: 200px;
+  background: var(--color-secondary);
+  bottom: -50px;
+  right: -50px;
+  animation: float 10s ease-in-out infinite;
+}
+
+.circle-3 {
+  width: 150px;
+  height: 150px;
+  background: var(--color-accent);
+  top: 50%;
+  left: -75px;
+  animation: float 12s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@media (max-width: 768px) {
+  .container {
+      width: 95%;
+      padding: 2rem;
+      min-height: 90vh;
+  }
+
+  h1 {
+      font-size: 2.5rem;
+  }
+
+  .subtitle {
+      font-size: 1rem;
+  }
+
+  input[type="text"], button {
+      font-size: 1rem;
+      padding: 1rem;
+  }
+
+  .decoration-circle {
+      display: none;
+  }
+}
+
+/* Animações adicionais */
+@keyframes pulse {
+  0% {
+      box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+  }
+  70% {
+      box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+  }
+  100% {
+      box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+  }
+}
+
+.input-container:focus-within {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(5px); }
+  50% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+  100% { transform: translateX(0); }
+}
+
+#clear-all:hover {
+  animation: shake 0.5s ease-in-out;
+}
+
+/* Efeito de onda no botão */
+button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
+@keyframes ripple {
+  0% {
+      transform: scale(0, 0);
+      opacity: 1;
+  }
+  20% {
+      transform: scale(25, 25);
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+      transform: scale(40, 40);
+  }
+}
+
+button:focus:not(:active)::after {
+  animation: ripple 1s ease-out;
+}

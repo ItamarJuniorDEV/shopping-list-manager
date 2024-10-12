@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Compras Ultra</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+</head>
+<body>
+    <div class="background-decoration"></div>
+    <div class="container">
+        <header>
+            <h1>Lista de Compras Ultra</h1>
+            <p class="subtitle">Organize suas compras com estilo</p>
+        </header>
+        <main>
+            <div class="input-container">
+                <input type="text" id="item-input" placeholder="Adicione um item...">
+                <button id="add-button">
+                    <i class="fas fa-plus"></i>
+                    <span>Adicionar</span>
+                </button>
+            </div>
+            <ul id="shopping-list">
+                <li class="sample-item">Exemplo de item 1 <button class="delete-btn"><i class="fas fa-trash-alt"></i></button></li>
+                <li class="sample-item">Exemplo de item 2 <button class="delete-btn"><i class="fas fa-trash-alt"></i></button></li>
+                <li class="sample-item">Exemplo de item 3 <button class="delete-btn"><i class="fas fa-trash-alt"></i></button></li>
+            </ul>
+            <div class="summary">
+                <p>Total de itens: <span id="item-count">3</span></p>
+                <button id="clear-all">Limpar Lista</button>
+            </div>
+        </main>
+    </div>
+    <div class="decoration-circle circle-1"></div>
+    <div class="decoration-circle circle-2"></div>
+    <div class="decoration-circle circle-3"></div>
+    <script src="scripts.js"></script>
+</body>
+</html>
